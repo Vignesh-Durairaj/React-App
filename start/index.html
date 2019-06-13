@@ -4,13 +4,19 @@
         <title>The best ReactJS project</title>
         <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
         <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     </head>
     <body>
         <div id = "root"></div>
-        <script type="text/javascript">
-            let h1Element = React.createElement("h1", {"style" : {"color" : "blue"}}, "Welcome to react")
-            ReactDOM.render(h1Element, document.getElementById("root")
-            );
+        <script type="text/babel">
+            let root = document.getElementById("root");
+            let h1Element = React.createElement("h1", {"style" : {"color" : "blue"}}, "Welcome to react");
+            let myDiv = React.createElement("div", {"id" : "myDiv"}, h1Element);
+            // ReactDOM.render(myDiv, root)
+
+            let user = `Vignesh Durairaj`;
+            let anotherElement = <h2>{user}</h2>;
+            // ReactDOM.render(anotherElement, root)
         </script>
     </body>
 </html>
