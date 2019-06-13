@@ -47,19 +47,33 @@
             // ReactDOM.render(<ListEle />, root);
 
             class ListEleMethod extends React.Component {
+                state = {
+                    loggedIn : false
+                }
+
+                logIn = () => this.setState({loggedIn: true});
+                logOut = () => this.setState({loggedIn: false});
+
                 render() {
                     return (
-                    <ul className='shady'>
-                        <ListItem name="Vikhi" />
-                        <ListItem name="Saami Kannu" />
-                        <ListItem name="Chitra" />
-                        <ListItem name="Pranov Boy" />
-                        <ListItem name="Thannu" />
-                    </ul>)
+                    <div>
+                        <button onClick = {this.logIn}>Log In</button> &nbsp; &nbsp;
+                        <button onClick = {this.logOut}>Log Out</button><br />
+                        <span>The user is {this.state.loggedIn ? "" : "NOT"} logged in</span>
+                        <ul className='shady'>
+                            <ListItem name="Vikhi" />
+                            <ListItem name="Saami Kannu" />
+                            <ListItem name="Chitra" />
+                            <ListItem name="Pranov Boy" />
+                            <ListItem name="Thannu" />
+                        </ul>
+                    </div>)
                 }
             }
 
             ReactDOM.render(<ListEleMethod />, root);
+
+            
         </script>
     </body>
 </html>
