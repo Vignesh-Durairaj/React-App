@@ -31,7 +31,35 @@
                 </div>
             );
 
-            ReactDOM.render(<MethodEle name="Vignesh Durairaj" message="A new paragraph element"/>, root);
+            // ReactDOM.render(<MethodEle name="Vignesh Durairaj" message="A new paragraph element"/>, root);
+
+            const ListItem = ({name}) => <li>{name}</li>;
+            let ListEle = () => (
+                <ul className='shady'>
+                    <ListItem name="Vignesh" />
+                    <ListItem name="Durairaj" />
+                    <ListItem name="Chitra" />
+                    <ListItem name="Pranov" />
+                    <ListItem name="Thanmaye" />
+                </ul>
+            );
+
+            // ReactDOM.render(<ListEle />, root);
+
+            class ListEleMethod extends React.Component {
+                render() {
+                    return (
+                    <ul className='shady'>
+                        <ListItem name="Vikhi" />
+                        <ListItem name="Saami Kannu" />
+                        <ListItem name="Chitra" />
+                        <ListItem name="Pranov Boy" />
+                        <ListItem name="Thannu" />
+                    </ul>)
+                }
+            }
+
+            ReactDOM.render(<ListEleMethod />, root);
         </script>
     </body>
 </html>
