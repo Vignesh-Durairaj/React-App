@@ -83,8 +83,15 @@
                 </div>
             );
 
-            ReactDOM.render(<AnotherElement />, root);
+            // ReactDOM.render(<AnotherElement />, root);
 
+            const countries = ["India", "China", "USA", "Kenya"];
+            const CountryApp = ({ctrys}) => (
+                <ul>
+                    {ctrys.map((item, i) => <li key={i}>{item}</li>)}
+                </ul>
+            );
+            ReactDOM.render(<CountryApp ctrys={countries} />, root);
         </script>
     </body>
 </html>
