@@ -5,6 +5,11 @@
         <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
         <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <style>
+            .shady {
+                color: orange;
+            }
+        </style>
     </head>
     <body>
         <div id = "root"></div>
@@ -17,6 +22,16 @@
             let user = `Vignesh Durairaj`;
             let anotherElement = <h2>{user}</h2>;
             // ReactDOM.render(anotherElement, root)
+
+            const MethodEle = (props) => (
+                <div className='shady'>
+                    This is a React application <br />
+                    <h4>Welcome, {props.name} !</h4>
+                    <p>{props.message}</p>
+                </div>
+            );
+
+            ReactDOM.render(<MethodEle name="Vignesh Durairaj" message="A new paragraph element"/>, root);
         </script>
     </body>
 </html>
