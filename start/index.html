@@ -71,9 +71,20 @@
                 }
             }
 
-            ReactDOM.render(<ListEleMethod />, root);
+            // ReactDOM.render(<ListEleMethod />, root);
 
-            
+            let Country = ({name}) => <h3>{name}</h3>;
+            let Currency = ({name}) => <h5>{name}</h5>;
+            let isCountry = false;
+            console.log(isCountry);
+            const AnotherElement = () => (
+                <div>
+                    {isCountry ? <Country name="China"/> : <Currency name="Yuan"/>}
+                </div>
+            );
+
+            ReactDOM.render(<AnotherElement />, root);
+
         </script>
     </body>
 </html>
