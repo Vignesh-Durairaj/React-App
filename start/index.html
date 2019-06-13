@@ -47,19 +47,51 @@
             // ReactDOM.render(<ListEle />, root);
 
             class ListEleMethod extends React.Component {
+                state = {
+                    loggedIn : false
+                }
+
+                logIn = () => this.setState({loggedIn: true});
+                logOut = () => this.setState({loggedIn: false});
+
                 render() {
                     return (
-                    <ul className='shady'>
-                        <ListItem name="Vikhi" />
-                        <ListItem name="Saami Kannu" />
-                        <ListItem name="Chitra" />
-                        <ListItem name="Pranov Boy" />
-                        <ListItem name="Thannu" />
-                    </ul>)
+                    <div>
+                        <button onClick = {this.logIn}>Log In</button> &nbsp; &nbsp;
+                        <button onClick = {this.logOut}>Log Out</button><br />
+                        <span>The user is {this.state.loggedIn ? "" : "NOT"} logged in</span>
+                        <ul className='shady'>
+                            <ListItem name="Vikhi" />
+                            <ListItem name="Saami Kannu" />
+                            <ListItem name="Chitra" />
+                            <ListItem name="Pranov Boy" />
+                            <ListItem name="Thannu" />
+                        </ul>
+                    </div>)
                 }
             }
 
-            ReactDOM.render(<ListEleMethod />, root);
+            // ReactDOM.render(<ListEleMethod />, root);
+
+            let Country = ({name}) => <h3>{name}</h3>;
+            let Currency = ({name}) => <h5>{name}</h5>;
+            let isCountry = false;
+            console.log(isCountry);
+            const AnotherElement = () => (
+                <div>
+                    {isCountry ? <Country name="China"/> : <Currency name="Yuan"/>}
+                </div>
+            );
+
+            // ReactDOM.render(<AnotherElement />, root);
+
+            const countries = ["India", "China", "USA", "Kenya"];
+            const CountryApp = ({ctrys}) => (
+                <ul>
+                    {ctrys.map((item, i) => <li key={i}>{item}</li>)}
+                </ul>
+            );
+            ReactDOM.render(<CountryApp ctrys={countries} />, root);
         </script>
     </body>
 </html>
