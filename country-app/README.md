@@ -1,3 +1,5 @@
+<a href="https://snyk.io/test/npm/eslint-utils/1.4.2"><img src="https://snyk.io/test/npm/eslint-utils/1.4.2/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/npm/eslint-utils/1.4.2" style="max-width:100%;"></a>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
